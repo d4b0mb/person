@@ -5,9 +5,9 @@ int Person::nextId = 1;
 
 Person::Person(const string& firstName, const string& middleName,
                const string& lastName, const string& major,
-               int age, Access clearance)
+               int age /* , Access clearance */)
     : firstName(firstName), middleName(middleName), lastName(lastName),
-      major(major), age(age), idN(nextId++), clearance(clearance) {}
+      major(major), age(age), idN(nextId++) /* , clearance(clearance) */ {}
 
 
 string Person::getFullName() const {
@@ -26,16 +26,17 @@ int Person::getIdN() const {
     return idN;
 }
 
-Access Person::getClearance() const {
-    return clearance;
-}
+// Access Person::getClearance() const {
+//     return clearance;
+// }
 
 
 void Person::updateName(const Person& modifier, const string& first, const string& middle, const string& last) {
 
-    if (modifier.getClearance() != Access::admin) {
-        throw runtime_error("Unauthorized: Only Admin can modify names.");
-    }
+    // if (modifier.getClearance() != Access::admin) {
+    //     throw runtime_error("Unauthorized: Only Admin can modify names.");
+    // }
+    (void)modifier;
 
     firstName = first;
     middleName = middle;
@@ -44,19 +45,21 @@ void Person::updateName(const Person& modifier, const string& first, const strin
 
 void Person::setMajor(const Person& modifier, const string& newMajor) {
 
-    if (modifier.getClearance() != Access::admin) {
-        throw runtime_error("Unauthorized: Only Admin can modify the major.");
-    }
+    // if (modifier.getClearance() != Access::admin) {
+    //     throw runtime_error("Unauthorized: Only Admin can modify the major.");
+    // }
+    (void)modifier;
 
     major = newMajor;
 }
 
 void Person::setAge(const Person& modifier, int newAge) {
 
-    if (modifier.getClearance() != Access::admin) {
-        throw runtime_error("Unauthorized: Only Admin can modify the age.");
-    }
-    
+    // if (modifier.getClearance() != Access::admin) {
+    //     throw runtime_error("Unauthorized: Only Admin can modify the age.");
+    // }
+    (void)modifier;
+
     if (newAge < 0) {
         throw invalid_argument("Invalid age: Age cannot be negative.");
     }
