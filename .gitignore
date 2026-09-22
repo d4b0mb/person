@@ -1,0 +1,22 @@
+# Build output
+build/
+cmake-build-*/
+out/
+
+# Object/binary files
+*.o
+*.obj
+*.a
+*.so
+*.dylib
+*.exe
+*.out
+
+# Editor/IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS cruft
+.DS_Store
