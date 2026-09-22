@@ -1,12 +1,13 @@
 #include "Person.h"
 using namespace std;
 
+int Person::nextId = 1;
 
-Person::Person(const string& firstName, const string& middleName, 
-               const string& lastName, const string& major, 
-               int age, int idN, Access clearance)
-    : firstName(firstName), middleName(middleName), lastName(lastName), 
-      major(major), age(age), idN(idN), clearance(clearance) {}
+Person::Person(const string& firstName, const string& middleName,
+               const string& lastName, const string& major,
+               int age, Access clearance)
+    : firstName(firstName), middleName(middleName), lastName(lastName),
+      major(major), age(age), idN(nextId++), clearance(clearance) {}
 
 
 string Person::getFullName() const {
