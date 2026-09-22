@@ -3,6 +3,14 @@
 A small C++ `Person` class meant to be extended by other classes that need
 to represent a person.
 
+## Branches
+
+- `main` — active development.
+- `demoTesting` — where in-progress changes get tried out before they're
+  considered stable.
+- `stable` — the last known-good, working version; only fast-forwarded from
+  `main` once a state has been confirmed stable.
+
 ## Base status
 
 This is a starting point, not a finished library. Currently `Person` holds:
